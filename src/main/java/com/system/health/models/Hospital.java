@@ -1,5 +1,6 @@
 package com.system.health.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -28,9 +29,11 @@ public class Hospital {
     @Column(name = "hospital_address")
     String hospitalAddress;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "hospital")
     Set<Employee> employees;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "hospital")
     Set<Incident> incidents;
 

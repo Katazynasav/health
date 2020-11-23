@@ -1,5 +1,6 @@
 package com.system.health.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -28,6 +29,7 @@ public class Incident {
     @Column(name = "incident_date")
     String incidentDate;
 
+    @JsonIgnore
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "patient_id")
     Patient patient;

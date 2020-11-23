@@ -1,5 +1,6 @@
 package com.system.health.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -30,6 +31,7 @@ public class EmergencyInfo {
     @Column(name = "medicines")
     String medicines;
 
+    @JsonIgnore
     @OneToOne(mappedBy = "emergencyInfo",fetch = FetchType.EAGER)
     Patient patient;
 
