@@ -1,11 +1,13 @@
-package com.system.health.models;
+package com.system.health.models.emergency;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.system.health.models.users.Employee;
+import com.system.health.models.users.Hospital;
+import com.system.health.models.users.Patient;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Data
 @NoArgsConstructor

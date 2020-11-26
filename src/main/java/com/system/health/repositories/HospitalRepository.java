@@ -1,6 +1,6 @@
 package com.system.health.repositories;
 
-import com.system.health.models.Hospital;
+import com.system.health.models.users.Hospital;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 

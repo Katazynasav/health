@@ -1,7 +1,7 @@
 package com.system.health.controllers;
 
-import com.system.health.models.Incident;
-import com.system.health.services.IncidentService;
+import com.system.health.models.emergency.Incident;
+import com.system.health.services.incident.IncidentService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

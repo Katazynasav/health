@@ -1,11 +1,12 @@
 package com.system.health.repositories;
 
-import com.system.health.models.Disease;
-import org.springframework.data.repository.CrudRepository;
+import com.system.health.models.emergency.Disease;
+import org.springframework.data.jpa.repository.JpaRepository;
+
 
 import java.util.List;
 
-public interface DiseaseRepository extends CrudRepository<Disease,Long> {
+public interface DiseaseRepository extends JpaRepository<Disease,Long> {
     List<Disease> findAll();
 
 }

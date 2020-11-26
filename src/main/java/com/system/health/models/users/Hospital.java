@@ -1,6 +1,7 @@
-package com.system.health.models;
+package com.system.health.models.users;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.system.health.models.emergency.Incident;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 

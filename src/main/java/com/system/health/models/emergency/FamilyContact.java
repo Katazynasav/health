@@ -1,6 +1,7 @@
-package com.system.health.models;
+package com.system.health.models.emergency;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.system.health.models.users.Patient;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -34,7 +35,7 @@ public class FamilyContact {
     String familyContactEmail;
 
     @JsonIgnore
-    @OneToOne(mappedBy = "familyContact",fetch = FetchType.EAGER)
+    @OneToOne(mappedBy = "familyContact",cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     Patient patient;
 
 }

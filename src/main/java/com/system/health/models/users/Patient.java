@@ -1,15 +1,13 @@
-package com.system.health.models;
+package com.system.health.models.users;
 
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.system.health.models.emergency.Incident;
+import com.system.health.models.emergency.EmergencyInfo;
+import com.system.health.models.emergency.FamilyContact;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import javax.persistence.*;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.util.Date;
 import java.util.Set;
 
 @Data

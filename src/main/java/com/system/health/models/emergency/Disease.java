@@ -1,11 +1,12 @@
-package com.system.health.models;
+package com.system.health.models.emergency;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 
 import javax.persistence.*;
-import java.util.Set;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -28,8 +29,9 @@ public class Disease {
     @Column(name = "disease_description")
     String diseaseDescription;
 
-    @OneToMany(mappedBy = "disease",fetch = FetchType.EAGER)
-    Set <EmergencyInfo> emergencyInfos;
+    @JsonIgnore
+    @ManyToMany(mappedBy = "disease", fetch = FetchType.LAZY)
+    private List<EmergencyInfo> emergencyInfo;
 
 
 

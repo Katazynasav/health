@@ -1,6 +1,6 @@
-package com.system.health.services;
+package com.system.health.services.incident;
 
-import com.system.health.models.Incident;
+import com.system.health.models.emergency.Incident;
 import com.system.health.repositories.IncidentRepository;
 import org.springframework.stereotype.Service;
 
