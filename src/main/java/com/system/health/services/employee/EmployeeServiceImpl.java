@@ -4,6 +4,7 @@ package com.system.health.services.employee;
 import com.system.health.models.users.Employee;
 import com.system.health.repositories.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 
@@ -14,8 +15,6 @@ import java.util.Optional;
 public class EmployeeServiceImpl implements EmployeeService {
 
 
-//    @Autowired
-//    BCryptPasswordEncoder bCryptPasswordEncoder;
     @Autowired
     EmployeeRepository employeeRepository;
 
@@ -26,30 +25,22 @@ public class EmployeeServiceImpl implements EmployeeService {
     public void createEmployee(Employee employee) {
         Employee generatedEmployee = new Employee();
         generatedEmployee.setEmployeeId((long) Math.floor(Math.random() * 9000000000L));
-//        generatedEmployee.setPassword(bCryptPasswordEncoder.encode(generatedEmployee.getPassword()));
         employeeRepository.save(generatedEmployee);
     }
 
     @Override
     public void deleteEmployee(Employee employee) {
+        employee = findByEmail(employee.getEmail()).orElseThrow(()->
+                new UsernameNotFoundException("Employee doesn't exist"));
         employeeRepository.delete(employee);
     }
 
-    @Override
-    public void findById(Employee employee) {
-        employeeRepository.findById(employee.getEmployeeId());
-
-    }
 
     @Override
     public Optional<Employee> findByEmail(String email) {
-        return employeeRepository.findByEmail(email);
+        Employee employeeToFind = employeeRepository.findByEmail(email).orElseThrow(()->
+         new UsernameNotFoundException("Employee doesn't exist"));
+        return Optional.ofNullable(employeeToFind);
+
     }
-
-//    @Override
-//    public Employee findByEmail(String email) {
-//        return employeeRepository.findByEmail(email);
-//    }
-
-
 }

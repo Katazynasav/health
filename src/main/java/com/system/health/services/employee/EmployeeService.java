@@ -9,7 +9,6 @@ public interface EmployeeService {
     List<Employee> findAll();
     void createEmployee(Employee employee);
     void deleteEmployee(Employee employee);
-    void findById(Employee employee);
     Optional<Employee> findByEmail(String email);
 
 }

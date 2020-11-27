@@ -18,20 +18,6 @@ public class DeveloperServiceImpl implements DeveloperService {
     }
 
     @Override
-    public void createDeveloper(Developer developer) {
-        Developer generatedDeveloper = new Developer();
-        generatedDeveloper.setPassword(bCryptPasswordEncoder.encode(generatedDeveloper.getPassword()));
-        developerRepository.save(developer);
-
-    }
-
-    @Override
-    public void deleteDeveloper(Developer developer) {
-        developerRepository.delete(developer);
-
-    }
-
-    @Override
     public void findById(Developer developer) {
         developerRepository.findById(developer.getDeveloperId());
 

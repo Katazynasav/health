@@ -7,7 +7,5 @@ import java.util.List;
 
 public interface DeveloperService {
     List<Developer> findAll();
-    void createDeveloper(Developer developer);
-    void deleteDeveloper(Developer developer);
     void findById(Developer developer);
 }
